@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="address" class="com.tongy.spring.Address">
+    <property name="address" value="湖北"/>
+  </bean>
+
+  <bean id="student" class="com.tongy.spring.Student">
+    <!-- 第一种，普通值注入, value-->
+    <property name="name" value="john"/>
+
+    <!-- 第二种，Bean注入, ref-->
+    <property name="address" ref="address"/>
+
+    <!-- 数组 -->
+    <property name="books">
+      <array>
+        <value>book1</value>
+        <value>book2</value>
+        <value>book3</value>
+      </array>
+    </property>
+
+    <!--list-->
+    <property name="hobbys">
+      <list>
+        <value>听歌</value>
+        <value>看电影</value>
+        <value>写代码</value>
+      </list>
+    </property>
+
+    <!--map-->
+    <property name="card">
+      <map>
+        <entry key="身份证" value="123456767"/>
+        <entry key="银行卡" value="555555555"/>
+        <entry key="学生证" value="666666666"/>
+      </map>
+    </property>
+
+    <!--set-->
+    <property name="games">
+      <set>
+        <value>LOL</value>
+        <value>COC</value>
+        <value>BOB</value>
+      </set>
+    </property>
+    
+    <!--null-->
+    <property name="wife">
+      <null/>
+    </property>
+    
+    <!--Properities-->
+    <property name="info">
+      <props>
+        <prop key="学号">2021000000</prop>
+        <prop key="性别">男</prop>
+      </props>
+    </property>
+
+  </bean>
+
+</beans>
