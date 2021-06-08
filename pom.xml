@@ -17,6 +17,7 @@
     <module>spring-06-appconfig</module>
     <module>spring-07-proxy</module>
       <module>spring-08-aop</module>
+      <module>spring-09-mybatis</module>
   </modules>
 
   <dependencies>
@@ -34,5 +35,26 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+        </includes>
+        <filtering>true</filtering>
+      </resource>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+        </includes>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
 
 </project>
